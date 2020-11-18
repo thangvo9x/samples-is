@@ -187,7 +187,22 @@ class WSO2OIDCAuthService {
                                                      additionalParameters: nil)
             
             self.appDelegate.externalUserAgentSession = OIDAuthorizationService.present(
-                logoutRequest, externalUserAgent: self.userAgent!, callback: { (authorizationState, error) in })
+                logoutRequest, externalUserAgent: self.userAgent!, callback: { (authorizationState, error) in
+                    
+                    if(error != nil) {
+                        print("Error", error as Any)
+                        return
+                    }
+                    
+                    
+                    let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+                    let viewController = storyBoard.instantiateViewController(withIdentifier: targetViewControllerId)
+                    self.appDelegate.window?.rootViewController = viewController
+                    viewController.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    
+                    self.appDelegate.externalUserAgentSession = nil
+                    LocalStorageManager.shared.clearLocalMemory()
+                })
         }))
         
         if (self.authState != nil) {
@@ -195,12 +210,12 @@ class WSO2OIDCAuthService {
         }
         
         // Log out locally
-        appDelegate.externalUserAgentSession = nil
-        LocalStorageManager.shared.clearLocalMemory()
-        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyBoard.instantiateViewController(withIdentifier: targetViewControllerId)
-        self.appDelegate.window?.rootViewController = viewController
-        viewController.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+//        appDelegate.externalUserAgentSession = nil
+//        LocalStorageManager.shared.clearLocalMemory()
+//        let storyBoard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let viewController = storyBoard.instantiateViewController(withIdentifier: targetViewControllerId)
+//        self.appDelegate.window?.rootViewController = viewController
+//        viewController.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     
     }
     

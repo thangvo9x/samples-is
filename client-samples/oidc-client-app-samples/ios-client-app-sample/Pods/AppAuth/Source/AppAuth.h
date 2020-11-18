@@ -19,7 +19,6 @@
 #import "OIDAuthState.h"
 #import "OIDAuthStateChangeDelegate.h"
 #import "OIDAuthStateErrorDelegate.h"
-#import "OIDAuthorizationFlowSession.h"
 #import "OIDAuthorizationRequest.h"
 #import "OIDAuthorizationResponse.h"
 #import "OIDAuthorizationService.h"
@@ -46,11 +45,12 @@
 
 #if TARGET_OS_TV
 #elif TARGET_OS_WATCH
-#elif TARGET_OS_IOS
+#elif TARGET_OS_IOS || TARGET_OS_MACCATALYST
 #import "OIDAuthState+IOS.h"
 #import "OIDAuthorizationService+IOS.h"
 #import "OIDExternalUserAgentIOS.h"
 #import "OIDExternalUserAgentIOSCustomBrowser.h"
+#import "OIDExternalUserAgentCatalyst.h"
 #elif TARGET_OS_MAC
 #import "OIDAuthState+Mac.h"
 #import "OIDAuthorizationService+Mac.h"
@@ -59,7 +59,6 @@
 #else
 #error "Platform Undefined"
 #endif
-
 
 /*! @mainpage AppAuth for iOS and macOS
 
@@ -76,7 +75,7 @@
     It follows the best practices set out in 
     [RFC 8252 - OAuth 2.0 for Native Apps](https://tools.ietf.org/html/rfc8252)
     including using `SFAuthenticationSession` and `SFSafariViewController` on iOS
-    for the auth request. `UIWebView` and `WKWebView` are explicitly *not*
+    for the auth request. Web view and `WKWebView` are explicitly *not*
     supported due to the security and usability reasons explained in
     [Section 8.12 of RFC 8252](https://tools.ietf.org/html/rfc8252#section-8.12).
 

@@ -1,22 +1,20 @@
 PODS:
-  - AppAuth (0.93.0)
+  - AppAuth (1.4.0):
+    - AppAuth/Core (= 1.4.0)
+    - AppAuth/ExternalUserAgent (= 1.4.0)
+  - AppAuth/Core (1.4.0)
+  - AppAuth/ExternalUserAgent (1.4.0)
 
 DEPENDENCIES:
-  - AppAuth (from `https://github.com/openid/AppAuth-iOS.git`, branch `dev-logout`)
+  - AppAuth
 
-EXTERNAL SOURCES:
-  AppAuth:
-    :branch: dev-logout
-    :git: https://github.com/openid/AppAuth-iOS.git
-
-CHECKOUT OPTIONS:
-  AppAuth:
-    :commit: 8aad29163b5784529a14114e79fb72812e10b863
-    :git: https://github.com/openid/AppAuth-iOS.git
+SPEC REPOS:
+  trunk:
+    - AppAuth
 
 SPEC CHECKSUMS:
-  AppAuth: 1096c2ad48507c4a2a8c85c8a6ff065741ab9931
+  AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
 
-PODFILE CHECKSUM: 25030d64c6428651f66147bab901fea34a5af0f3
+PODFILE CHECKSUM: 7bd4ddc0b59cf72b4d5f2ef9e67f6163ace8db72
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.9.3

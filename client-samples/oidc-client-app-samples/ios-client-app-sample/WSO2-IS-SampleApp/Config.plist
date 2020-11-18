@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>IssuerURL</key>
-	<string>https://wso2is.local:9443</string>
+	<string>https://htid.hungthinhcorp.com.vn</string>
 	<key>LogOutURL</key>
-	<string>https://wso2is.local:9443/oidc/logout</string>
+	<string>https://htid.hungthinhcorp.com.vn/oidc/logout</string>
 	<key>UserInfoURL</key>
-	<string>https://wso2is.local:9443/oauth2/userinfo?schema=openid</string>
+	<string>https://htid.hungthinhcorp.com.vn/oauth2/userinfo?schema=openid</string>
 	<key>TokenURL</key>
-	<string>https://wso2is.local:9443/oauth2/token</string>
+	<string>https://htid.hungthinhcorp.com.vn/oauth2/token</string>
 	<key>AuthURL</key>
-	<string>https://wso2is.local:9443/oauth2/authorize</string>
+	<string>https://htid.hungthinhcorp.com.vn/oauth2/authorize</string>
 	<key>RedirectURL</key>
 	<string>wso2issample://oauth</string>
 	<key>ClientID</key>
-	<string>BRa73rLLNiP5cGBflG7mjxG9N7Ya</string>
+	<string>r3VYDvC7o87Xw6xN1HK8K575kC8a</string>
 </dict>
 </plist>
